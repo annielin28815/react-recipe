@@ -8,6 +8,7 @@ import Home from './pages/home';
 import Login from './pages/home/components/Login';
 import Register from './pages/home/components/Register';
 import Recipe from './pages/recipe/index';
+// import Tag from './pages/tag/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,11 +16,12 @@ root.render(
     <HashRouter>
         <Routes>
             <Route element={<Home />}>
-                <Route path='/' element={<Register />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register />} />
+                <Route path='/' element={<Login />} />
+                <Route path='login' element={<Login />} />
+                <Route path='register' element={<Register />} />
             </Route>
             <Route path='recipe' element={<Recipe />} />
+            {/* <Route path='tag' element={<Tag />} /> */}
         </Routes>
     </HashRouter>
   </div>

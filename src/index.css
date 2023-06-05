@@ -10,8 +10,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+main{
+  background-color: #bac6d1;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content-title {
+  height: 200px;
+}
+.content-title h1{
+  font-family: 'Calligraffitti', cursive;
+  font-weight: 700;
+  font-size: 100px;
+  position: absolute;
+  top: 178px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #F9f1cc;
+  text-shadow: 5px 5px 0px #FFB650, 
+    10px 10px 0px #FFD662;
 }
