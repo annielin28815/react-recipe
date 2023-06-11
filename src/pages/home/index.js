@@ -1,6 +1,5 @@
-import React , { Component } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
+import React  from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Home = () => {
 
@@ -34,7 +33,6 @@ const Home = () => {
                   <a href="#" className="bg-yellow-500 text-blue-500 rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
                   <a href="#" className="text-brown-50 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Recipe</a>
                   <a href="#" className="text-brown-50 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Tag</a>
-                  <a href="#" className="text-brown-50 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Ingredient</a>
                 </div>
               </div>
             </div>
