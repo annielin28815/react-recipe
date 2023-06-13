@@ -113,10 +113,9 @@ const Home = () => {
           </div>
         </div>
       </nav>
-
       
       <main className="bg-blue-gray-100" style={{height: 'calc(100vh - 64px)'}}>
-        <div className="mx-auto w-2/5 py-6 sm:px-6 lg:px-8">
+        <div className="mx-auto w-100 py-3 sm:px-6 lg:px-8">
           <Outlet />
         </div>
       </main>
