@@ -40,6 +40,16 @@ module.exports = {
           900: '#43302b',
         },
       },
+      width: {
+        '3': '0.75rem',
+        '4': '1rem',
+        '5': '1.25rem',
+      },
+      lineHeight: {
+        '3': '0.75rem',
+        '4': '1rem',
+        '5': '1.25rem',
+      }
     },
   },
   plugins: [],
