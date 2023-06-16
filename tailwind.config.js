@@ -16,10 +16,14 @@ module.exports = {
         500: '#f6d64f',
       },
       blue: {
+        100: '#e8eff5',
         500: '#2f6695',
         gray: {
           100: '#bac6d1',
         }
+      },
+      red: {
+        100: '#fae9e9',
       },
       djangoGreen: {
         900: '#0f3c2d'
