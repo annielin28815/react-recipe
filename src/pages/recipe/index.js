@@ -1,7 +1,26 @@
 import RecipeTags from '../recipe/components/recipeTags';
 import IngredientTags from '../recipe/components/ingredientTags';
+import TableBtn from '../../components/tableBtn';
 
 const RecipeList = () => {
+
+  const data = [
+    {
+      title: '檸檬塔',
+      price: '80',
+      tags: ['lemon', 'cake'],
+      ingredients: ['sugar', 'lemon'],
+      image: 'https://fakeimg.pl/180x130/'
+    },
+    {
+      title: '肉桂捲',
+      price: '200',
+      tags: ['cinara', 'dessert'],
+      ingredients: ['sugar', 'cinara'],
+      image: 'https://fakeimg.pl/180x130/'
+    },
+  ];
+
   return (
     <div className="max-w-2/4">
       <header>
@@ -23,41 +42,44 @@ const RecipeList = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="text-center border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-              <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">1</td>
-              <td className="px-6 py-4">檸檬塔</td>
-              <td className="px-6 py-4">$80</td>
-              <td className="px-6 py-4">
-                <div className='flex justify-center items-center'>
-                  <RecipeTags name="lemon" />
-                  <RecipeTags name="cake" />
-                  <RecipeTags name="dessert" />
-                </div>
-              </td>
-              <td className="px-6 py-4">
-                <div className='flex justify-center items-center'>
-                  <IngredientTags name="sugar" />
-                  <IngredientTags name="lemon" />
-                </div>
-              </td>
-              <td className="px-6 py-4 text-center">
-                <div className="flex justify-center items-center">
-                  <img src="https://fakeimg.pl/180x130/" />
-                </div>
-              </td>
-              <td>
-                <div className="flex justify-center items-center">
-                  <button type="button" className="text-white bg-blue-100 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2f6695" className="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>
-                    <span className="sr-only">edit</span>
-                  </button>
-                  <button type="button" className="text-white bg-red-100 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d9274f" className="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" /></svg>
-                    <span className="sr-only">delete</span>
-                  </button>
-                </div>
-              </td>
-            </tr>
+            {data.map((item) => {
+              return (
+                <tr className="text-center border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                  <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">1</td>
+                  <td className="px-6 py-4">{item.title}</td>
+                  <td className="px-6 py-4">$ {item.price}</td>
+                  <td className="px-6 py-4">
+                    <div className='flex justify-center items-center'>
+                      {item.tags.map((tag) => {
+                        return (
+                          <RecipeTags name={tag} />
+                        )
+                      })}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className='flex justify-center items-center'>
+                      {item.ingredients.map((element) => {
+                        return (
+                          <IngredientTags name={element} />
+                        )
+                      })}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-center">
+                    <div className="flex justify-center items-center">
+                      <img src={item.image} alt={item.title} />
+                    </div>
+                  </td>
+                  <td>
+                    <div className="flex justify-center items-center">
+                      <TableBtn title="edit" status="success" />
+                      <TableBtn title="delete" status="error" />
+                    </div>
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>
